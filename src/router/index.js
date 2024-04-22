@@ -46,46 +46,46 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/Home',
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      path: 'Home',
+      name: '驾驶舱大屏',
+      component: () => import('@/views/home/index'),
+      meta: { title: '驾驶舱大屏', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/market',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    // redirect: '/example/table',
+    // name: '市场营销',
+    // meta: { title: '市场营销', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
+        path: 'market',
+        name: '市场营销',
+        component: () => import('@/views/market/index'),
+        meta: { title: '市场营销', icon: 'table' }
+      }/*,
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
-      }
+      }*/
     ]
   },
 
   {
-    path: '/form',
+    path: '/complaint',
     component: Layout,
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        path: 'complaint',
+        name: '投诉处理',
+        component: () => import('@/views/complaint/index'),
+        meta: { title: '投诉处理', icon: 'form' }
       }
     ]
   },
@@ -93,14 +93,11 @@ export const constantRoutes = [
   {
     path: '/nested',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
+    // redirect: '/nested/menu1',
+    // name: '覆盖可视化',
+    // meta: { title: '覆盖可视化', icon: 'nested' },
     children: [
-      {
+      /* {
         path: 'menu1',
         component: () => import('@/views/nested/menu1/index'), // Parent router-view
         name: 'Menu1',
@@ -139,16 +136,41 @@ export const constantRoutes = [
             meta: { title: 'Menu1-3' }
           }
         ]
-      },
+      },*/
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'visualized',
+        component: () => import('@/views/visualized/index'),
+        name: '覆盖可视化',
+        meta: { title: '覆盖可视化', icon: 'dashboard' }
       }
     ]
   },
 
+  {
+    path: '/netOpt',
+    component: Layout,
+    children: [
+      {
+        path: 'netOpt',
+        name: '网优支撑',
+        component: () => import('@/views/netOpt/index'),
+        meta: { title: '网优支撑', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/data',
+    component: Layout,
+    children: [
+      {
+        path: 'data',
+        name: '数据维护',
+        component: () => import('@/views/data/index'),
+        meta: { title: '数据维护', icon: 'form' }
+      }
+    ]
+  }, /*,
   {
     path: 'external-link',
     component: Layout,
@@ -158,7 +180,7 @@ export const constantRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },
+  }*/
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
